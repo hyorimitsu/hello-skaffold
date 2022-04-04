@@ -6,6 +6,7 @@ This is a simple RESTful API sample using Skaffold.
 ## Directory Structure
 ```
 .
+├── .dockerignore      # => files/directories to ignore from docker build and skaffold watch
 ├── Dockerfile
 ├── README.md
 ├── cmd
@@ -37,6 +38,12 @@ eval $(minikube -p simple docker-env)
 
 # run application
 skaffold dev
+```
+
+Get url to access the service.
+
+```shell
+minikube service --profile simple greet-api --url
 ```
 
 Stop the application.
